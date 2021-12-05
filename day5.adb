@@ -91,8 +91,7 @@ procedure Day5 is
         end loop;
     end walk;
 
-    -- Given a string with a list of comma-separated or whitespace separated
-    -- 1 or 2-digit numbers, fill a vector with those numbers
+    -- Given a line segment in the format prescribed, return a Segment record
     function parseSegment (s : String) return Segment is
         ret  : Segment;
 
