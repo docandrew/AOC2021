@@ -1,9 +1,6 @@
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Strings; use Ada.Strings;
-with Ada.Containers;
-with Ada.Containers.Indefinite_Hashed_Maps;
 
--- Note: need to manually add extra newline after last line of input
 procedure Day5 is
     input : File_Type;
 
@@ -16,25 +13,16 @@ procedure Day5 is
 
     -- 500 line segments in input
     type SegmentArr is array (1..500) of Segment;
-    -- type SegmentArr is array (1..10) of Segment; -- for test data
     segments : SegmentArr;
-
-    -- hacky... but no collisions...
-    function HashN (n : Natural) return Ada.Containers.Hash_Type is
-    begin
-        return Ada.Containers.Hash_Type (n);
-    end HashN;
 
     -- not memory-friendly but fast lookups!
     type LookupList is array (0..999_999) of Natural;
-    -- type LookupList is array (0..99) of Natural; -- for test data
     lookup : LookupList := (others => 0);
 
-    -- Convert 2D coord into a 1D unique position that we can use for a hashmap
+    -- Convert 2D coord into a 1D unique position that we can use for an array index
     function get1D (x : Natural; y : Natural) return Natural is
     begin
         return y * 1000 + x;
-        -- return y * 10 + x;  --for test data
     end get1D;
 
     -- Walk a vertical line segment, updating the lookup list as we do so
