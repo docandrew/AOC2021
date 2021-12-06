@@ -55,3 +55,19 @@ kind of what we're doing here.
 Part 2: Fairly straight-forward to generalize the "walkXYZ" functions
 into one that worked diagonally. Basic line-drawing algorithm but your
 slope will always be 1 or -1.
+
+# Day 6 Notes:
+
+Part 1: My initial thought was to just keep a vector and model every fish as
+a separate cell. But I had a feeling when the problem talked about an "exponential"
+lanternfish growth model that this would get out of hand fairly quickly. All we
+really care about is the number of fish of each age group. The mechanics of 
+"aging" the fish and increasing the population is straightforward, sort of a
+shift-register with addition to certain cells.
+
+I'm actually pretty happy with this one, fairly clean implementation, and I was
+able to make use of the new Ada 202X 'Reduce attribute for the final tally.
+
+Part 2: Changed the type of the FishPopulations to Unsigned_64 and change number
+of days to run the simulation to 256, worked after making sure to use Unsigned_64
+throughout.
