@@ -56,7 +56,7 @@ Part 2: Fairly straight-forward to generalize the "walkXYZ" functions
 into one that worked diagonally. Basic line-drawing algorithm but your
 slope will always be 1 or -1.
 
-# Day 6 Notes:
+## Day 6 Notes:
 
 Part 1: My initial thought was to just keep a vector and model every fish as
 a separate cell. But I had a feeling when the problem talked about an "exponential"
