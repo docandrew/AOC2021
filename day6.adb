@@ -24,7 +24,7 @@ begin
     for c of Get_Line (input) loop
         if c in '0'..'8' then
             curr := Natural'Value ((1 => c));
-            fish(curr) := fish(curr) + 1;
+            fish(curr) := @ + 1;
             -- Put(curr'Image & ",");
         end if;
     end loop;
@@ -45,7 +45,7 @@ begin
         fish(8) := zerofish;
 
         -- Then, all the 0-aged fish become 6-aged fish
-        fish(6) := fish(6) + zerofish;
+        fish(6) := @ + zerofish;
     end loop;
 
     -- Tally everything up
