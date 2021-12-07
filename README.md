@@ -71,3 +71,23 @@ able to make use of the new Ada 202X 'Reduce attribute for the final tally.
 Part 2: Changed the type of the FishPopulations to Unsigned_64 and change number
 of days to run the simulation to 256, worked after making sure to use Unsigned_64
 throughout.
+
+## Day 7 Notes:
+
+Part 1: There's probably some kind of elegant way to do a binary search or something
+of the various distances, but with the limited list of inputs, just brute-forcing
+the sum of distances still results in an O((max_input - min_input) * n) runtime, which
+is entirely reasonable. I had a feeling that fancy stuff might result in getting stuck
+in a local minima as well. Ain't nobody got time for that.
+
+Part 2: Individual fuel burn calculations become `d + (d - 1) + (d - 2) + ... + 1` for
+a given distance d. Running a `for` loop to calculate this isn't the end of the world,
+but I vaguely remembered a shortcut, which as the source code mentions, I thought I
+read about in an anecdote about an interview question. In this case, the formula
+`d(d-1)/2` gives you the sum of all integers up to `(d - 1)`, so using 
+`d + d(d-1)/2` will give the fuel burn as defined in the problem.
+`d(d-1)/2` is one of those handy things to keep in the back of your mind (for
+interviews, at least).
+
+Adding a running tally of the best fuel burn was a straightforward addition to
+the Part 1 solution.
