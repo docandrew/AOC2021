@@ -91,3 +91,10 @@ interviews, at least).
 
 Adding a running tally of the best fuel burn was a straightforward addition to
 the Part 1 solution.
+
+## Day 8 Notes:
+
+Part 1: More ugly parsing code, but fairly straightforward
+
+Part 2: Oof, this one was a doozy. There's probably a lot of ways to make this
+more elegant.
