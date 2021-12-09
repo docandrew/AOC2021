@@ -68,11 +68,9 @@ begin
                 curr := Natural'Value ((1 => c));
                 grid (col, row) := curr;
                 col := col + 1;
-                Put(curr'Image);
             end if;
         end loop;
         row := row + 1;
-        Put_Line ("");
     end loop;
 
     -- find low points
