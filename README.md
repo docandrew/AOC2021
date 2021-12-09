@@ -98,3 +98,16 @@ Part 1: More ugly parsing code, but fairly straightforward
 
 Part 2: Oof, this one was a doozy. There's probably a lot of ways to make this
 more elegant.
+
+## Day 9 Notes:
+
+Part 1: There's probably a more elegant way of finding the low points, but the
+massive wall of if-then-elsif I used to handle all the corner cases and edge cases
+(pun intended) works fine.
+
+Part 2: I'm actually pretty happy with the recursive solution I came up with. The
+key to making it work was a separate `dirty` grid keeping track of whether an
+element was already counted as part of a different basin. At first I thought
+maybe I needed to also keep track of whether the neighboring squares were larger
+than the one under consideration, but the problem statement didn't mention it,
+which simplified things greatly.
