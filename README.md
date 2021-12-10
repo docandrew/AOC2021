@@ -111,3 +111,14 @@ element was already counted as part of a different basin. At first I thought
 maybe I needed to also keep track of whether the neighboring squares were larger
 than the one under consideration, but the problem statement didn't mention it,
 which simplified things greatly.
+
+## Day 10 Notes:
+
+Part 1: Bracket matching is kind of a classic interview problem, the use of a
+stack here is key.
+
+Part 2: I love, love, love Ada's ability to index arrays using pretty much any
+type. Having an easy mapping from `char on the stack` => `points` made this
+straightforward. Ada's detection of overflow made it obvious that a larger
+numeric type to hold the score total was essential. Big wins for Ada on this
+part.
