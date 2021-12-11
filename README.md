@@ -122,3 +122,13 @@ type. Having an easy mapping from `char on the stack` => `points` made this
 straightforward. Ada's detection of overflow made it obvious that a larger
 numeric type to hold the score total was essential. Big wins for Ada on this
 part.
+
+## Day 11 Notes:
+
+Part 1: Just good old-fashioned brute-forcing. I think the trick here is to keep
+a separate matrix of who flashed so they can be reset, and then the loop condition
+of "did a flash occur this round"
+
+Part 2: Since we keep the tally of flashes after each round, we know everybody
+flashed if the number of flashes after the step is exactly 100 more than it was
+before the step.
