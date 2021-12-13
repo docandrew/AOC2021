@@ -132,3 +132,18 @@ of "did a flash occur this round"
 Part 2: Since we keep the tally of flashes after each round, we know everybody
 flashed if the number of flashes after the step is exactly 100 more than it was
 before the step.
+
+## Day 12 Notes:
+
+Part 1: I decided to use BFS, algorithm mostly translated from C++ from the
+geeksforgeeks site to count the number of unique paths. Modifying the "isVisited"
+function to determine whether the node in question was an "uppercase" or "lowercase"
+and always pretend that uppercase nodes are unvisited did the trick.
+
+Part 2: Added a second function isVisited2 which uses some additional logic to
+determine whether a lowercase node has already been visited twice. This takes
+a surprisingly long time to run for the larger input graphs!
+
+I suspect just generating a permutation of the various nodes with insertion of
+uppercase nodes along the way and then doing validation of each "proposed" path
+per the problem's rules might have worked too.
