@@ -147,3 +147,16 @@ a surprisingly long time to run for the larger input graphs!
 I suspect just generating a permutation of the various nodes with insertion of
 uppercase nodes along the way and then doing validation of each "proposed" path
 per the problem's rules might have worked too.
+
+## Day 13 Notes:
+
+This was a fun one.
+
+Part 1: Use of Ada's Hashed_Sets package was critical here, as it made it very
+quick to eliminate overlapping dots. The most troublesome piece here was goofing
+up 0-based coordinates and finally realizing that the dots along the fold are
+discarded.
+
+Part 2: Initially I thought that I'd need to use the width/height of the folded
+paper for part 1 to calculate the coordinates. That wasn't necessary, but thankfully
+I kept them around because it made generating the part 2 answer very easy.
