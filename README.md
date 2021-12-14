@@ -160,3 +160,22 @@ discarded.
 Part 2: Initially I thought that I'd need to use the width/height of the folded
 paper for part 1 to calculate the coordinates. That wasn't necessary, but thankfully
 I kept them around because it made generating the part 2 answer very easy.
+
+## Day 14 Notes:
+
+Part 1: Took the naive approach initially, and just used an Unbounded_String to
+update as we went. It worked great... and was totally not going to fly in Part 2!
+
+Part 2: This took me a lot more work than I expected. I think I started with the
+right idea, which was to keep track of _pairs_ of letters, and then update their
+count, since each substitution creates essentially 2 new pairs. i.e. NN -> C would
+make NC and CN. Each of those two pairs can be represented as a number, i.e.
+AA = 00, AB = 01, BA = 26 ... ZZ = 675. This is easy for us to store in an array,
+though a hash map could have worked here too. I tried to go back and calculate
+the number of each individual letter from these pairs which was a fool's errand,
+didn't work at all. The trick here was just updating the character counts as
+each insertion was performed... doh! No letters are destroyed during insertion,
+only pairs, so it ended up being a simple add.
+
+I'm pretty happy with the end result, it runs quickly and is pretty clean
+considering all the challenges I had getting it to work.
