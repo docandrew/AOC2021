@@ -179,3 +179,23 @@ only pairs, so it ended up being a simple add.
 
 I'm pretty happy with the end result, it runs quickly and is pretty clean
 considering all the challenges I had getting it to work.
+
+## Day 15 Notes:
+
+Part 1: First thought was to use dynamic programming, but there's nothing that
+says we have to only move down and right, so this makes the problem more of a
+shortest-path graph algorithm. I translated a generic Dijkstra's algo and it
+worked fine. Instead of using a priority queue though, I just re-scanned the whole
+grid looking for unvisited vertices to try, which worked fine for the small input.
+
+Part 2: Duplicating the grids is straight-forward, adding some logic to the
+input loop to take whatever value is in the original grid and then duplicate it
+in each of the other tiles with the appropriate increment factor (tilex + tiley).
+
+The larger input set definitely exposed a weakness in my original algo though,
+in that this thing was _sloooooow_. It took about a minute on my machine, which
+is fairly beefy. I suspect the issue is my brute-force search for un-visited
+nodes. Replacing this with a priority queue would probably help a lot... so I
+went ahead and did that, and now it runs in about 100 ms. Much better! I played
+around with converting it to an A* algorithm (which I learned about in my
+Dijkstra's algo research) but runtime was essentially the same.
