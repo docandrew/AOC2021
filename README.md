@@ -199,3 +199,19 @@ nodes. Replacing this with a priority queue would probably help a lot... so I
 went ahead and did that, and now it runs in about 100 ms. Much better! I played
 around with converting it to an A* algorithm (which I learned about in my
 Dijkstra's algo research) but runtime was essentially the same.
+
+## Day 16 Notes:
+
+Part 1: Took me a while to comprehend the problem statement, but once I did, I
+turned to my trusty tool the Recursive Descent parser. As I was working it out,
+I had a feeling that this was going to turn into some kind of expression
+calculator...
+
+Part 2: ...which it did! I had started to build up a fancy AST tree dealie, and
+work through everything that way, but... I already had the machinery in place
+with the recursive descent parser to just go ahead and calculate the expression
+as it encountered the various sub-expressions. Once I got it to compile, it
+actually worked the first try, which was a shock! There's probably a cleaner
+more "functional" way to handle it, i.e. passing a function pointer or something
+for each type of operation, but I ended up with 2 massive case statements in
+the parseOperator function instead. Not the most "elegant", but it worked.
