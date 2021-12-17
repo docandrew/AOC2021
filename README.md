@@ -215,3 +215,21 @@ actually worked the first try, which was a shock! There's probably a cleaner
 more "functional" way to handle it, i.e. passing a function pointer or something
 for each type of operation, but I ended up with 2 massive case statements in
 the parseOperator function instead. Not the most "elegant", but it worked.
+
+## Day 17 Notes:
+
+Part 1: I decided to just brute force this, loop a bunch of different initial
+x and y velocities, run the simulation for N steps and see what hit, if the peak
+trajectory is better than the previous peak, then save it, etc. I struggled
+with incorrect answers for a while, when I realized that I wasn't running the
+simulation long enough! Giving a much bigger N gave me a good result for part 1,
+since very high y-velocities can still hit the target but take a long time to
+fall back down out of the stratosphere (or whatever the underwater equivalent
+is). The input was small enough that I didn't bother with parsing.
+
+Part 2: I expanded the scope of y velocities, since you can kind of shoot the
+probe "downward" and still hit the target if your X is big enough. Widening the
+aperture a bit gave me the correct answer to this problem just a couple
+minutes after figuring out part 1. I changed the simulation to end once we
+overshot the target rather than continuing to run for a set number of steps.
+It's much quicker this way.
