@@ -233,3 +233,22 @@ aperture a bit gave me the correct answer to this problem just a couple
 minutes after figuring out part 1. I changed the simulation to end once we
 overshot the target rather than continuing to run for a set number of steps.
 It's much quicker this way.
+
+## Day 18 Notes:
+
+Part 1: What a doozy. Lots of fighting with Ada's Multiway_Trees package, but
+it provided everything I needed once I dug into it. Tricky parts were finding
+the left and right (if they exist) elements of a deeply-nested pair, I just
+ended up flattening the tree with a DFS and using some vector index magic to
+figure it out. Took me a long time to get it all figured out. One hack that's
+really dirty but I'm also kind of proud - I couldn't get the Multiway_Trees
+package to splice/copy/whatever two rooted trees, so I just dumped 'em to
+strings, concatenated and added the extra `[`, `,` and `]` and re-read it in.
+
+I had the temptation of doing everything with mucking about with the textual
+representation, but I'm glad I didn't, since a lot of the helper functions were
+most easily written with a recursive solution.
+
+Part 2: Fairly straightforward, just did an O(n^2) pairwise comparison of
+everything. I'm not sure that there's a quicker way to do this, honestly.
+The whole thing still finishes in less than a second.
