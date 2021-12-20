@@ -252,3 +252,36 @@ most easily written with a recursive solution.
 Part 2: Fairly straightforward, just did an O(n^2) pairwise comparison of
 everything. I'm not sure that there's a quicker way to do this, honestly.
 The whole thing still finishes in less than a second.
+
+## Day 19 Notes:
+
+Part 1: I had a really tough time with this. Just trying to work out the quick
+way of "swizzling" the coordinates to get the 24 mentioned possible orientations
+was a lot of work. I eventually went back to matrix math, worked out the 3
+rotation matrices for X, Y, Z for each of 90, 180, 270 degrees. (0 deg for each is
+just the identity matrix)
+
+I then wrote a quick function to apply every combo of these 4
+3 matrices to get my 24 orientations. I just call them RotIndex 1 through 24.
+Initially I tried brute-forcing all the translations in a big loop, but it took
+way too long, and the translation I had was goofed too. Finally had to cry uncle
+and find a hint that you really only need to try the translations from the known
+set to each of the candidates, then apply that translation to the other candidates
+to see if you get 12 matches or more. It's still brute-force, but completes in
+an acceptable amount of time. Lots of trial and error here with single coordinates
+from the example to get the details of rotate-then-translate right. When going
+against the test data, I realized that a scanner might only share coordinates
+with _later_ scanners, which means you really have to go through the entire list
+multiple times, to discover the un-calculated beacons! This takes a while to
+compute.
+
+Part 2: This one was mercifully short. I wimped out with an easy O(n^2) pairwise
+comparison across all known beacons. I paid good money for this computer, I'm
+not going to go easy on it! However... the question didn't ask for comparison
+across all known beacons - it wanted the _scanners_. So, easy fix - just add the
+translation values for each scanner to a new set, then compare those. Of course,
+there was one little catch - I didn't add the _first_ scanner translation (0,0,0),
+which of course that's one of the scanners! I found that out by staring closely
+at the two scanner coords I printed out as part of the debugging effort :)
+
+
