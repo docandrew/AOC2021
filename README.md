@@ -284,4 +284,14 @@ there was one little catch - I didn't add the _first_ scanner translation (0,0,0
 which of course that's one of the scanners! I found that out by staring closely
 at the two scanner coords I printed out as part of the debugging effort :)
 
+## Day 20 Notes:
 
+Part 1: Not too bad, I took a gamble that this wasn't going to be a lanternfish
+problem and make me do some weird math to keep track of the different values or
+something. Going from sample data to the actual input threw a nice curveball in
+that '000000000' got mapped to 1, so the infinite field beyond our interesting
+data gets switched from all 0s to all 1s every other enhancement. This required
+me to gin up a little hack to keep track of the "boundary" character and
+manually set the outer boundary each enhancement.
+
+Part 2: I just had to increase the pad and run the remaining enhancements.
