@@ -295,3 +295,13 @@ me to gin up a little hack to keep track of the "boundary" character and
 manually set the outer boundary each enhancement.
 
 Part 2: I just had to increase the pad and run the remaining enhancements.
+
+## Day 21 Notes:
+
+Part 1: Fairly straight-forward once I worked out the modulo arithmetic.
+
+Part 2: Oooooof. I wasted a _lot_ of time trying to come up with a DP solution
+for this, but just couldn't figure out a way to build the tables out. I
+greatly overthought this, recursive solution worked fine after realizing that
+the probabilities for the various win numbers compound themselves. I definitely
+needed some hints for this one.
