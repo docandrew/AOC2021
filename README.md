@@ -305,3 +305,17 @@ for this, but just couldn't figure out a way to build the tables out. I
 greatly overthought this, recursive solution worked fine after realizing that
 the probabilities for the various win numbers compound themselves. I definitely
 needed some hints for this one.
+
+## Day 22 Notes:
+
+Part 1: Brute force for the win.
+
+Part 2: Ugh, this almost broke me. I had the right idea initially, to look at
+an instruction, go back through the previous instructions to check for intersections,
+and then modify the added volume from there. It's not enough to track the running
+volume though, new _instructions_ must be added to account for the difference. I
+figured that out on my own but couldn't make it work - finally, I saw a tip that
+if you are double-counting the "off" intersections, you actually need to turn the
+intersection of those back "on", so it's not double-counted. (I realized 
+on my own that for intersecting "on" instructions you need to turn the intersection
+"off".) In the end, the math all works out!
